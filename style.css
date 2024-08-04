@@ -13,7 +13,7 @@
 }
 
 .inner_header{
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: block;
     margin: 0 auto;
@@ -63,6 +63,13 @@
 .dropdown {
     float: left;
     overflow: hidden;
+
+    /* solution */
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+    /* solution */
   }
   
 .dropdown .dropbtn {
@@ -74,7 +81,9 @@
     font-size: 16px; 
     border: none;
     outline: none;
-    padding: 10px; 
+    /* solution */
+    /* padding: 10px;  */
+    /* solution */  
     background-color: inherit;
     
   }
