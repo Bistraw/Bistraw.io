@@ -9,4 +9,8 @@ $(document).ready(function(){
             $(this).text("Bistraw"); // Revert back to "Bistraw"
         }
     );
+
+
+    
+
 });
