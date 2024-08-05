@@ -5,7 +5,10 @@
     text-decoration: none;
 }
 
+
 .header{
+    position: fixed; /*revisar que no afecte*/
+    top: 0;         /*revisar que no afecte*/
     width: 100%;
     height: 80px;
     display: block;
@@ -58,18 +61,13 @@
     font-size: 16px;
 }
 
-/*borrable pa abajo*/
-
 .dropdown {
     float: left;
     overflow: hidden;
-
-    /* solution */
     height: 100%;
     display: table;
     float: left;
     padding: 0px 20px;
-    /* solution */
   }
   
 .dropdown .dropbtn {
@@ -80,10 +78,7 @@
     font-family: 'Roboto';
     font-size: 16px; 
     border: none;
-    outline: none;
-    /* solution */
-    /* padding: 10px;  */
-    /* solution */  
+    outline: none; 
     background-color: inherit;
     
   }
@@ -114,3 +109,106 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  /*Borrable*/
+
+  
+.container{
+    min-height: 100vh;
+    font-family: 'Roboto';
+    background: #08071d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("conctact.png") no-repeat center center/cover;
+}
+
+.container form{
+    width: 670px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+}
+
+.container form h1{
+    color: #000000;
+    font-weight: 500;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+.container form input{
+    width: 290px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid black;
+}
+
+.container form input::placeholder{
+    color: black;
+}
+
+.container form #lastName,
+.container form #mobile{
+    margin-left: 20px;
+}
+
+.container form h4{
+    color: black;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.container form textarea{
+    background: none;
+    border: none;
+    border-bottom: 2px solid black;
+    color: black;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+textarea::-webkit-scrollbar{
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb{
+    background-color: rgba(194,194,194,0.713);
+}
+
+.container form #button{
+    border: none;
+    background: #ffffffb8;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    width: 100px;
+    padding: 0;
+    margin-left: 500px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.container form #button:hover{
+    opacity: 0.7;
+}
