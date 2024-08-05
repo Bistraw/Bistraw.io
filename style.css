@@ -143,6 +143,13 @@
     text-align: center;
 }
 
+.container form h3{
+    color: #000000;
+    font-weight: 500;
+    width: 500px;
+    text-align: center;
+}
+
 .container form input{
     width: 290px;
     height: 40px;
