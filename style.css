@@ -1,221 +1,127 @@
 *{
     margin: 0;
     padding: 0;
-    list-style: none;
-    text-decoration: none;
 }
 
-
-.header{
-    position: fixed; /*revisar que no afecte*/
-    top: 0;         /*revisar que no afecte*/
-    width: 100%;
-    height: 80px;
-    display: block;
-    background-color: #101010;
-}
-
-.inner_header{
-    width: 80%;
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-.logo_container{
-    height: 100%;
-    display: table;
-    float: left;
-}
-
-.logo_container h1{
-    color: white;
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    font-family: 'Oswald';
-    font-size: 32px;
-}
-
-.navigation{
-    float: right;
-    height: 100%;
-}
-
-.navigation a{
-    height: 100%;
-    display: table;
-    float: left;
-    padding: 0px 20px;
-}
-.navigation a:last-child{
-    padding-right: 0;
-}
-
-.navigation a li{
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
-    color: white;
+body{
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: 'Roboto';
     font-size: 16px;
 }
 
-.dropdown {
-    float: left;
-    overflow: hidden;
-    height: 100%;
-    display: table;
-    float: left;
-    padding: 0px 20px;
-  }
-  
-.dropdown .dropbtn {
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
-    color: white;
-    font-family: 'Roboto';
-    font-size: 16px; 
-    border: none;
-    outline: none; 
-    background-color: inherit;
-    
-  }
-  
-  .dropdown-content {
-    display: none;
-    font-family: 'Roboto';
-    position: absolute;
-    background-color: #f9f9f9a5;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 
-  /*Borrable*/
-
-  
-.container{
-    min-height: 100vh;
-    font-family: 'Roboto';
-    background: #08071d;
+nav ul{
+    width: 100%;
+    list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    background: url("conctact.png") no-repeat center center/cover;
 }
 
-.container form{
-    width: 670px;
-    height: 400px;
+nav li {
+    height: 50px;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
     display: flex;
+    align-items: center;
+    color:white
+}
+
+
+
+
+nav li:first-child{
+    margin-right: auto;
+    font-family: 'Oswald';
+    font-size: 32px;
+}
+
+
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.808);
+    backdrop-filter: blur(40px);
+    box-shadow: 3px 3px 5px rgba(36, 13, 13, 0.37);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+ width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+.menu-buttom{
+    display: none;
+}
+
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+
+    .menu-buttom{
+        display: block;
+    }
+}
+
+
+@media(max-width:430px){
+    .sidebar{
+        width: 100%;
+    }
+}
+
+
+#home{
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-    border-radius: 15px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    flex-wrap: wrap;
+    background-color: #ff0000;
 }
 
-.container form h1{
-    color: #000000;
-    font-weight: 500;
-    margin-top: 20px;
-    width: 500px;
-    text-align: center;
+#portafolio{
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #001aff;
 }
 
-.container form h3{
-    color: #000000;
-    font-weight: 500;
-    width: 500px;
-    text-align: center;
-}
-
-.container form input{
-    width: 290px;
-    height: 40px;
-    padding-left: 10px;
-    outline: none;
-    border: none;
-    font-size: 15px;
-    margin-bottom: 10px;
-    background: none;
-    border-bottom: 2px solid black;
-}
-
-.container form input::placeholder{
-    color: black;
-}
-
-.container form #lastName,
-.container form #mobile{
-    margin-left: 20px;
-}
-
-.container form h4{
-    color: black;
-    font-weight: 300;
-    width: 600px;
-    margin-top: 20px;
-}
-
-.container form textarea{
-    background: none;
-    border: none;
-    border-bottom: 2px solid black;
-    color: black;
-    font-weight: 200;
-    font-size: 15px;
-    padding: 10px;
-    outline: none;
-    min-width: 600px;
-    max-width: 600px;
-    min-height: 80px;
-    max-height: 80px;
-}
-
-textarea::-webkit-scrollbar{
-    width: 1em;
-}
-
-textarea::-webkit-scrollbar-thumb{
-    background-color: rgba(194,194,194,0.713);
-}
-
-.container form #button{
-    border: none;
-    background: #ffffffb8;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 20px;
-    color: black;
-    width: 100px;
-    padding: 0;
-    margin-left: 500px;
-    margin-bottom: 30px;
-    transition: 0.3s;
-}
-
-.container form #button:hover{
-    opacity: 0.7;
+#contact{
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
 }
