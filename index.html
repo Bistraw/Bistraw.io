@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bistraw</title>
+    <link rel="icon" type="imgs/svg+xml" href="imgs/">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -18,8 +19,8 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-4">
-                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#projects" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
@@ -35,8 +36,8 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu hidden md:hidden bg-slate-900">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
                 <a href="#projects" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
                 <a href="#contact" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
             </div>
         </div>
@@ -44,26 +45,351 @@
 
     <!-- Header with Particles Background -->
     <header class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 px-6 pt-16">
-        <div id="particles-js"></div>
-        <div class="header-content text-center max-w-5xl">
+    <div id="particles-js"></div>
+    
+    <!-- Contenedor principal con z-index más alto -->
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl mx-auto relative z-10">
+        <!-- Contenido de texto -->
+        <div class="text-center lg:text-left lg:flex-1 relative z-10">
             <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">
                     Games, Research & Creative Solutions
                 </span>
             </h1>
-            <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto lg:mx-0">
                 Blending Entertainment and Technology
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#projects" class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-medium text-white transition duration-300 transform hover:scale-105">
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                <a href="#projects" class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-medium text-white transition duration-300 transform hover:scale-105 relative z-10">
                     View My Work
                 </a>
-                <a href="#contact" class="px-8 py-3 border-2 border-indigo-500 hover:bg-indigo-900/50 rounded-full font-medium text-white transition duration-300 transform hover:scale-105">
+                <a href="#contact" class="px-8 py-3 border-2 border-indigo-500 hover:bg-indigo-900/50 rounded-full font-medium text-white transition duration-300 transform hover:scale-105 relative z-10">
                     Contact Me
                 </a>
             </div>
         </div>
-    </header>
+
+        <!-- Ilustración con z-index -->
+        <div class="lg:flex-1 flex justify-center relative z-10">
+            <img src="imgs/bistraw card graphics.png" alt="Ilustration" class="w-full max-w-md xl:max-w-xl relative z-10">
+        </div>
+    </div>
+</header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
+                <span class="border-b-4 border-indigo-500 pb-2">Indie Games</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+                <!-- Proyectos iniciales (3 primeros) -->
+                <!-- Project 1 -->
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="imgs/d1faea1d-00fc-4c39-b6d6-36cbf41fed5e.jpeg" alt="Sci-fi FPS game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">The Finance Game</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">On Development</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Massive fantasy MMORPG with stunning visuals and a crypto economy</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">MMO</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unreal</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Blockchain</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="imgs/PH_skull.png" alt="Puzzle adventure game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Calaverita de Azucar</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">On Development</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Roblox multiverse experience with minigames and expressive customization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Roblox</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Internship</span>
+                        </div>
+                    </div>
+                </div>
+                
+        
+                <!-- Project 3 -->
+                 <!--
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="imgs/poio_fliped.png" alt="Mobile tower defense game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Rooster Games</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2021</span>
+                        </div>
+                        <p class="text-gray-300 mb-4"> University Video Game Development Club</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">University Club</span>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                 -->
+
+                <!-- Proyectos adicionales (ocultos inicialmente) -->
+                <!-- Project 4 -->
+                <!-- Proximos proyectos
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400/3b82f6/ffffff?text=Project+4" alt="VR Adventure Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">VR Odyssey</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2020</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Immersive VR adventure with hand tracking and physics interactions.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">VR</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unreal</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Adventure</span>
+                        </div>
+                    </div>
+                </div>
+            -->
+                <!-- Project 5 -->
+    <!-- Proximos proyectos
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400/6366f1/ffffff?text=Project+5" alt="Roguelike Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Dungeon Crawler</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2019</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Procedurally generated roguelike with permadeath and loot systems.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Roguelike</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unity</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Procedural</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Project+6" alt="Mobile Puzzle Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Mind Bender</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2018</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Mobile puzzle game with 200+ handcrafted levels and daily challenges.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Mobile</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Puzzle</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Casual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    -->
+            <!--  Esperar a agregar nuevos proyectos
+            <div class="text-center mt-12">
+                <button id="view-more-btn" class="inline-flex items-center px-6 py-3 border-2 border-indigo-500 rounded-full font-medium text-white hover:bg-indigo-900/30 transition">
+                    View All Projects
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </div>
+        -->
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
+                <span class="border-b-4 border-indigo-500 pb-2">Academic And Professional Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+                <!-- Proyectos iniciales (3 primeros) -->
+                <!-- Project 1 -->
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="imgs/WOE.png" alt="Sci-fi FPS game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">World of Equilibrium</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">On Development</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Massive fantasy MMORPG with stunning visuals and a crypto economy</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">MMO</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unreal</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Blockchain</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="imgs/Brandcade.png" alt="Puzzle adventure game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Brandcade</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Roblox multiverse experience with minigames and expressive customization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Roblox</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Internship</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="imgs/poio_fliped.png" alt="Mobile tower defense game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Rooster Games</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2021</span>
+                        </div>
+                        <p class="text-gray-300 mb-4"> University Video Game Development Club</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">University Club</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyectos adicionales (ocultos inicialmente) -->
+                <!-- Project 4 -->
+                <!-- Proximos proyectos
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400/3b82f6/ffffff?text=Project+4" alt="VR Adventure Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">VR Odyssey</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2020</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Immersive VR adventure with hand tracking and physics interactions.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">VR</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unreal</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Adventure</span>
+                        </div>
+                    </div>
+                </div>
+            -->
+                <!-- Project 5 -->
+    <!-- Proximos proyectos
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400/6366f1/ffffff?text=Project+5" alt="Roguelike Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Dungeon Crawler</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2019</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Procedurally generated roguelike with permadeath and loot systems.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Roguelike</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unity</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Procedural</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
+                    <div class="project-image relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Project+6" alt="Mobile Puzzle Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Mind Bender</h3>
+                            <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2018</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">Mobile puzzle game with 200+ handcrafted levels and daily challenges.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Mobile</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Puzzle</span>
+                            <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Casual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    -->
+            <!--  Esperar a agregar nuevos proyectos
+            <div class="text-center mt-12">
+                <button id="view-more-btn" class="inline-flex items-center px-6 py-3 border-2 border-indigo-500 rounded-full font-medium text-white hover:bg-indigo-900/30 transition">
+                    View All Projects
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </div>
+        -->
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 px-6 bg-slate-900">
@@ -243,161 +569,6 @@
         </div>
     </section>
 -->
-   <!-- Projects Section -->
-<section id="projects" class="py-20 px-6 bg-slate-900">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
-            <span class="border-b-4 border-indigo-500 pb-2">Featured Projects</span>
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
-            <!-- Proyectos iniciales (3 primeros) -->
-            <!-- Project 1 -->
-            <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
-                <div class="project-image relative overflow-hidden">
-                    <img src="imgs/WOE.png" alt="Sci-fi FPS game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white">Click to see more</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold text-white">World of Equilibrium</h3>
-                        <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">On Development</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">Massive fantasy MMORPG with stunning visuals and a crypto economy</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">MMO</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unreal</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Blockchain</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
-                <div class="project-image relative overflow-hidden">
-                    <img src="imgs/Brandcade.png" alt="Puzzle adventure game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white">Click to see more</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold text-white">Brandcade</h3>
-                        <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2025</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">Roblox multiverse experience with minigames and expressive customization.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Roblox</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Internship</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700">
-                <div class="project-image relative overflow-hidden">
-                    <img src="imgs/poio_fliped.png" alt="Mobile tower defense game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white">Click to see more</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold text-white">Rooster Games</h3>
-                        <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2021</span>
-                    </div>
-                    <p class="text-gray-300 mb-4"> University Video Game Development Club</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">University Club</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Proyectos adicionales (ocultos inicialmente) -->
-            <!-- Project 4 -->
-             <!-- Proximos proyectos
-            <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
-                <div class="project-image relative overflow-hidden">
-                    <img src="https://via.placeholder.com/600x400/3b82f6/ffffff?text=Project+4" alt="VR Adventure Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white">Click to see more</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold text-white">VR Odyssey</h3>
-                        <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2020</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">Immersive VR adventure with hand tracking and physics interactions.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">VR</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unreal</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Adventure</span>
-                    </div>
-                </div>
-            </div>
-        -->
-            <!-- Project 5 -->
-<!-- Proximos proyectos
-            <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
-                <div class="project-image relative overflow-hidden">
-                    <img src="https://via.placeholder.com/600x400/6366f1/ffffff?text=Project+5" alt="Roguelike Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white">Click to see more</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold text-white">Dungeon Crawler</h3>
-                        <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2019</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">Procedurally generated roguelike with permadeath and loot systems.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Roguelike</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Unity</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Procedural</span>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="project-card bg-gray-800 rounded-xl overflow-hidden transition-all hover:bg-slate-700 hidden more-projects">
-                <div class="project-image relative overflow-hidden">
-                    <img src="https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Project+6" alt="Mobile Puzzle Game" class="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white">Click to see more</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold text-white">Mind Bender</h3>
-                        <span class="text-xs px-2 py-1 bg-indigo-600 rounded-full">2018</span>
-                    </div>
-                    <p class="text-gray-300 mb-4">Mobile puzzle game with 200+ handcrafted levels and daily challenges.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Mobile</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Puzzle</span>
-                        <span class="text-xs px-2 py-1 bg-indigo-900/30 rounded">Casual</span>
-                    </div>
-                </div>
-            </div>
-        </div>
--->
-         <!--  Esperar a agregar nuevos proyectos
-        <div class="text-center mt-12">
-            <button id="view-more-btn" class="inline-flex items-center px-6 py-3 border-2 border-indigo-500 rounded-full font-medium text-white hover:bg-indigo-900/30 transition">
-                View All Projects
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-            </button>
-        </div>
-    -->
-    </div>
-</section>
-
     <!-- Experience Section -->
     <section class="py-20 px-6 bg-slate-800">
         <div class="max-w-6xl mx-auto">
