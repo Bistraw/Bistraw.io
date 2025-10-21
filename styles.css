@@ -235,11 +235,6 @@ body.light-theme a.bg-gray-700:hover svg {
     color: #ffffff !important;
 }
 
-body.light-theme .border-b-4 {
-    border-bottom: none !important;
-    border-color: transparent !important;
-}
-
 /* Asegurar visibilidad de textos con efectos especiales */
 body.light-theme h1 span,
 body.light-theme h2 span,
@@ -259,23 +254,14 @@ body.light-theme span.text-white {
     color: #ffffff !important;
 }
 
-/* Quitar subrayados en tema claro */
-body.light-theme .border-b-4,
-body.light-theme .border-b,
-body.light-theme span.border-b-4,
-body.light-theme span[class*="border-b"],
-body.light-theme h2 > span,
-body.light-theme section h2 span {
-    border-bottom: none !important;
-    border-bottom-width: 0 !important;
-    border-bottom-color: transparent !important;
-}
-
-/* Asegurar que el span sea visible sin subrayado */
-body.light-theme h2 span[class*="border-b"] {
+/* Agregar subrayado azul a títulos en tema claro */
+body.light-theme h2 > span.border-b-4,
+body.light-theme section h2 span.border-b-4,
+body.light-theme span[class*="border-b-4"] {
     color: #1d1d1f !important;
-    border-bottom: none !important;
-    border: none !important;
+    border-bottom: 4px solid #0071e3 !important;
+    border-bottom-width: 4px !important;
+    border-bottom-color: #0071e3 !important;
     display: inline-block;
     padding-bottom: 0.5rem;
 }
