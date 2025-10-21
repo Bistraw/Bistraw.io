@@ -30,6 +30,10 @@ body.light-theme nav span {
     color: #1d1d1f !important;
 }
 
+body.light-theme #logo-text {
+    color: #0071e3 !important;
+}
+
 body.light-theme nav a:hover,
 body.light-theme nav button:hover {
     color: #1d1d1f !important;
