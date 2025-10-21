@@ -1,110 +1,92 @@
-// Initialize Particles.js
+// Theme Toggle Functionality
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const body = document.body;
+    
+    // Iconos para desktop
+    const sunIcon = document.getElementById('theme-icon-sun');
+    const moonIcon = document.getElementById('theme-icon-moon');
+    
+    // Iconos para mobile
+    const sunIconMobile = document.getElementById('theme-icon-sun-mobile');
+    const moonIconMobile = document.getElementById('theme-icon-moon-mobile');
+    const themeTextMobile = document.getElementById('theme-text-mobile');
+    
+    // Cargar tema guardado
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-theme');
+        updateThemeIcons(true);
+    }
+    
+    function updateThemeIcons(isLight) {
+        if (isLight) {
+            // Desktop
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            // Mobile
+            sunIconMobile.classList.remove('hidden');
+            moonIconMobile.classList.add('hidden');
+            themeTextMobile.textContent = 'Modo Noche';
+        } else {
+            // Desktop
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            // Mobile
+            sunIconMobile.classList.add('hidden');
+            moonIconMobile.classList.remove('hidden');
+            themeTextMobile.textContent = 'Modo Día';
+        }
+    }
+    
+    function toggleTheme() {
+        body.classList.toggle('light-theme');
+        const isLight = body.classList.contains('light-theme');
+        updateThemeIcons(isLight);
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggleMobile.addEventListener('click', toggleTheme);
+}
+
+// Initialize Animated Squares Background
 document.addEventListener('DOMContentLoaded', function() {
-    particlesJS('particles-js', {
-        "particles": {
-            "number": {
-                "value": 80,
-                "density": {
-                    "enable": true,
-                    "value_area": 800
-                }
-            },
-            "color": {
-                "value": "#3b82f6"
-            },
-            "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#000000"
-                },
-                "polygon": {
-                    "nb_sides": 5
-                }
-            },
-            "opacity": {
-                "value": 0.5,
-                "random": false,
-                "anim": {
-                    "enable": false,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 3,
-                "random": true,
-                "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 150,
-                "color": "#3b82f6",
-                "opacity": 0.4,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 3,
-                "direction": "none",
-                "random": false,
-                "straight": false,
-                "out_mode": "out",
-                "bounce": false,
-                "attract": {
-                    "enable": false,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                }
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "grab"
-                },
-                "onclick": {
-                    "enable": true,
-                    "mode": "push"
-                },
-                "resize": true
-            },
-            "modes": {
-                "grab": {
-                    "distance": 140,
-                    "line_linked": {
-                        "opacity": 1
-                    }
-                },
-                "bubble": {
-                    "distance": 400,
-                    "size": 40,
-                    "duration": 2,
-                    "opacity": 8,
-                    "speed": 3
-                },
-                "repulse": {
-                    "distance": 200,
-                    "duration": 0.4
-                },
-                "push": {
-                    "particles_nb": 4
-                },
-                "remove": {
-                    "particles_nb": 2
-                }
-            }
-        },
-        "retina_detect": true
-    });
+    // Inicializar tema
+    initThemeToggle();
+    
+    const squaresContainer = document.getElementById('squares-background');
+    const numSquares = 50; // Number of squares to generate
+    
+    // Generate squares
+    for (let i = 0; i < numSquares; i++) {
+        const square = document.createElement('div');
+        square.className = 'animated-square';
+        
+        // Random size between 20px and 80px
+        const size = Math.random() * 60 + 20;
+        square.style.width = `${size}px`;
+        square.style.height = `${size}px`;
+        
+        // Random starting position
+        square.style.left = `${Math.random() * 100}%`;
+        square.style.top = `${Math.random() * 100}%`;
+        
+        // Random animation duration between 10s and 30s
+        const duration = Math.random() * 20 + 10;
+        square.style.animationDuration = `${duration}s`;
+        
+        // Random delay
+        const delay = Math.random() * 5;
+        square.style.animationDelay = `${delay}s`;
+        
+        // Random opacity
+        const opacity = Math.random() * 0.3 + 0.1;
+        square.style.opacity = opacity;
+        
+        squaresContainer.appendChild(square);
+    }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -153,11 +135,11 @@ document.addEventListener('DOMContentLoaded', function() {
 const projectsData = {
     "World of Equilibrium": {
         year: "En desarrollo",
-        videoId: "F-FQ2edShsw",
-        images: [
-            "imgs/WOE.png",
-            "imgs/WOE-gameplay1.jpg",
-            "imgs/WOE-gameplay2.jpg"
+        media: [
+            { type: "video", id: "F-FQ2edShsw" },
+            { type: "image", src: "imgs/WOE.png" },
+            { type: "image", src: "imgs/WOE-gameplay1.jpg" },
+            { type: "image", src: "imgs/WOE-gameplay2.jpg" }
         ],
         description: "As a member of a small, collaborative team, I contribute directly to the development of the MMORPG 'World of Equilibrium'. My primary focus is on designing quests that immerse players in the storyline, creating typical MMO objectives that enhance the narrative surrounding the game's factions: The Kingdom and The Tribe. <br><br> Additionally, I design characters, developing their backstories and visual appearances while utilizing available resources to ensure each character fits seamlessly within the game's context. For level design, I create maps that are visually appealing and cohesive, paying close attention to element placement, lighting, and the harmony of assets. I avoid including anything that feels out of place unless it serves a clear narrative or environmental purpose. <br><br>We use Unreal Engine for development, and as a small team, we maintain constant communication to quickly address issues and keep the development process running smoothly, always working closely with the game director.",
         features: [
@@ -172,10 +154,9 @@ const projectsData = {
     },
     "Brandcade": {
         year: "2022",
-        videoId: "ZhVGAGWwAwQ",
-        images: [
-            
-        ],                 
+        media: [
+            { type: "video", id: "ZhVGAGWwAwQ" }
+        ],
         description: "During my internship as a Game Design Intern at Brandcade, I participated in the development of a Roblox experience that has reached over 10.8k visits, working under Amber Studio. My role involved creating game concepts from scratch, including core mechanics, themes, and overall gameplay flow. I collaborated closely with other designers and developers through daily stand-ups, ensuring smooth communication and problem-solving within the team. One of my favorite contributions was designing a unique bubble mechanic for a racing game: players would enter a bubble that allowed them to bounce and move differently, and to activate nitro, they had to strategically deflate it. In addition to the hands-on experience, I earned a scholarship for advanced training in Unreal Engine and 3D modeling in Blender.",
         features: [
             "Designed original game concepts including core mechanics, themes, and gameplay flow.",
@@ -189,8 +170,8 @@ const projectsData = {
     },
     "Rooster Games": {
         year: "2021",
-        images: [
-            "imgs/poio_fliped.png"
+        media: [
+            { type: "image", src: "imgs/poio_fliped.png" }
         ],
         description: "The club is dedicated to supporting anyone interested in creating video games, regardless of experience level. We foster a collaborative environment where members work together on real projects, from concept to development, promoting hands-on learning and knowledge sharing. To achieve this, we organize various activities such as talks, game jams, and team work sessions, open to both students of the Autonomous University of Aguascalientes and the general public interested in game development.",
         features: [
@@ -212,7 +193,7 @@ function openProjectModal(projectName) {
 
     // Configurar el modal con los datos del proyecto
     const modalTitle = document.getElementById('modal-title');
-    const modalVideo = document.getElementById('modal-video');
+    const modalMainMedia = document.getElementById('modal-main-media');
     const modalGallery = document.getElementById('modal-gallery');
     const modalDescription = document.getElementById('modal-description');
     const featuresList = document.querySelector('#modal-features ul');
@@ -221,23 +202,85 @@ function openProjectModal(projectName) {
 
     modalTitle.textContent = `${projectName} (${project.year})`;
     
-    // Configurar video si existe
-    if (project.videoId) {
-        modalVideo.src = `https://www.youtube.com/embed/${project.videoId}?autoplay=0`;
-        modalVideo.classList.remove('hidden');
-    } else {
-        modalVideo.classList.add('hidden');
+    // Función para renderizar el medio principal
+    function renderMainMedia(mediaItem, index) {
+        modalMainMedia.innerHTML = '';
+        if (mediaItem.type === 'video') {
+            modalMainMedia.innerHTML = `
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/${mediaItem.id}?autoplay=0" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+                </div>
+            `;
+        } else {
+            modalMainMedia.innerHTML = `
+                <div class="rounded-lg overflow-hidden">
+                    <img src="${mediaItem.src}" alt="${projectName}" class="w-full h-96 object-cover">
+                </div>
+            `;
+        }
     }
     
-    // Limpiar y llenar la galería de imágenes
+    // Renderizar el primer medio como principal
+    if (project.media && project.media.length > 0) {
+        renderMainMedia(project.media[0], 0);
+    }
+    
+    // Limpiar y llenar la galería de miniaturas
     modalGallery.innerHTML = '';
-    project.images.forEach(imgSrc => {
-        modalGallery.innerHTML += `
-            <div class="rounded-lg overflow-hidden">
-                <img src="${imgSrc}" alt="${projectName} screenshot" class="w-full h-40 object-cover hover:scale-105 transition-transform cursor-pointer">
-            </div>
-        `;
-    });
+    if (project.media && project.media.length > 1) {
+        project.media.forEach((mediaItem, index) => {
+            let thumbnailHTML = '';
+            
+            if (mediaItem.type === 'video') {
+                // Miniatura de video de YouTube
+                const thumbnailUrl = `https://img.youtube.com/vi/${mediaItem.id}/mqdefault.jpg`;
+                thumbnailHTML = `
+                    <div class="thumbnail-item rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-indigo-500 transition-all relative" data-index="${index}">
+                        <img src="${thumbnailUrl}" alt="Video thumbnail" class="w-full h-20 object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Miniatura de imagen
+                thumbnailHTML = `
+                    <div class="thumbnail-item rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-indigo-500 transition-all" data-index="${index}">
+                        <img src="${mediaItem.src}" alt="${projectName} thumbnail" class="w-full h-20 object-cover">
+                    </div>
+                `;
+            }
+            
+            modalGallery.innerHTML += thumbnailHTML;
+        });
+        
+        // Agregar event listeners a las miniaturas
+        document.querySelectorAll('.thumbnail-item').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                renderMainMedia(project.media[index], index);
+                
+                // Actualizar borde activo
+                document.querySelectorAll('.thumbnail-item').forEach(t => {
+                    t.classList.remove('border-indigo-500');
+                    t.classList.add('border-transparent');
+                });
+                this.classList.remove('border-transparent');
+                this.classList.add('border-indigo-500');
+            });
+        });
+        
+        // Marcar la primera miniatura como activa
+        const firstThumbnail = document.querySelector('.thumbnail-item[data-index="0"]');
+        if (firstThumbnail) {
+            firstThumbnail.classList.remove('border-transparent');
+            firstThumbnail.classList.add('border-indigo-500');
+        }
+    }
 
     // Configurar descripción
     modalDescription.innerHTML = `<p>${project.description}</p>`;
@@ -276,7 +319,7 @@ function openProjectModal(projectName) {
 // Función para cerrar el modal
 function closeProjectModal() {
     document.getElementById('project-modal').classList.add('hidden');
-    document.getElementById('modal-video').src = '';
+    document.getElementById('modal-main-media').innerHTML = '';
     document.body.style.overflow = 'auto';
 }
 
