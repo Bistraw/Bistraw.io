@@ -207,16 +207,16 @@ function openProjectModal(projectName) {
         modalMainMedia.innerHTML = '';
         if (mediaItem.type === 'video') {
             modalMainMedia.innerHTML = `
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/${mediaItem.id}?autoplay=0" 
+                <div class="aspect-w-16 aspect-h-9" style="height: 450px;">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/${mediaItem.id}?autoplay=0" 
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen></iframe>
                 </div>
             `;
         } else {
             modalMainMedia.innerHTML = `
-                <div class="rounded-lg overflow-hidden">
-                    <img src="${mediaItem.src}" alt="${projectName}" class="w-full h-96 object-cover">
+                <div class="rounded-lg overflow-hidden" style="height: 450px;">
+                    <img src="${mediaItem.src}" alt="${projectName}" class="w-full h-full object-contain bg-black">
                 </div>
             `;
         }
