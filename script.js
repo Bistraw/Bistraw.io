@@ -136,10 +136,10 @@ const projectsData = {
     "World of Equilibrium": {
         year: "En desarrollo",
         media: [
-            { type: "video", id: "F-FQ2edShsw" },
             { type: "image", src: "imgs/WOE.png" },
-            { type: "image", src: "imgs/WOE-gameplay1.jpg" },
-            { type: "image", src: "imgs/WOE-gameplay2.jpg" }
+            { type: "direct-video", src: "imgs/woe-video.mp4" },
+            { type: "image", src: "imgs/woe1.jpg" },
+          
         ],
         description: "As a member of a small, collaborative team, I contribute directly to the development of the MMORPG 'World of Equilibrium'. My primary focus is on designing quests that immerse players in the storyline, creating typical MMO objectives that enhance the narrative surrounding the game's factions: The Kingdom and The Tribe. <br><br> Additionally, I design characters, developing their backstories and visual appearances while utilizing available resources to ensure each character fits seamlessly within the game's context. For level design, I create maps that are visually appealing and cohesive, paying close attention to element placement, lighting, and the harmony of assets. I avoid including anything that feels out of place unless it serves a clear narrative or environmental purpose. <br><br>We use Unreal Engine for development, and as a small team, we maintain constant communication to quickly address issues and keep the development process running smoothly, always working closely with the game director.",
         features: [
@@ -213,6 +213,15 @@ function openProjectModal(projectName) {
                         allowfullscreen></iframe>
                 </div>
             `;
+        } else if (mediaItem.type === 'direct-video') {
+            modalMainMedia.innerHTML = `
+                <div class="rounded-lg overflow-hidden" style="height: 450px;">
+                    <video class="w-full h-full object-contain bg-black" controls>
+                        <source src="${mediaItem.src}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            `;
         } else {
             modalMainMedia.innerHTML = `
                 <div class="rounded-lg overflow-hidden" style="height: 450px;">
@@ -240,6 +249,17 @@ function openProjectModal(projectName) {
                     <div class="thumbnail-item rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-indigo-500 transition-all relative" data-index="${index}">
                         <img src="${thumbnailUrl}" alt="Video thumbnail" class="w-full h-20 object-cover">
                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                `;
+            } else if (mediaItem.type === 'direct-video') {
+                // Miniatura de video directo
+                thumbnailHTML = `
+                    <div class="thumbnail-item rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-indigo-500 transition-all relative bg-black" data-index="${index}">
+                        <div class="w-full h-20 flex items-center justify-center">
                             <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z"/>
                             </svg>
