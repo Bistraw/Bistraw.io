@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Popups - projects
 const projectsData = {
     "World of Equilibrium": {
-        year: "En desarrollo",
+        year: "On Development",
         media: [
             { type: "image", src: "imgs/WOE.png" },
             { type: "direct-video", src: "imgs/woe-video.mp4" },
@@ -183,6 +183,25 @@ const projectsData = {
         ],
         technologies: ["Unity", "Unreal Engine", "Godot"],
         link: "https://roostergamesclub.github.io/Site/index.html"
+    },
+    "Hollow Stories: Lockdown": {
+        year: "collaboration with Hollow Sense",
+        media: [
+            { type: "image", src: "imgs/SS_LD04.png" },
+            { type: "direct-video", src: "imgs/HS_Lockdown_003.mp4" },
+            { type: "image", src: "imgs/SS_LD03.png" }
+        ],
+        description: " Hollow Stories: Lockdown is a survival horror noir game set in the 1990s, where every corner hides secrets and nothing is what it seems. Players must uncover a web of police corruption and a hidden cult operating from the shadows, facing moral dilemmas, crime, and violence in a city under siege. Inspired by late-90s horror and suspense classics, the game blends cinematic fixed cameras with first-person aiming, delivering a neo-retro experience that mixes exploration, tension, and strategic combat. The classic inventory system increases tension by limiting resources, forcing players to make careful, high-stakes decisions. ",
+        features: [
+            "Cinematic Fixed Cameras: A throwback to classic survival horror, with dramatic angles that build suspense and hide threats.",
+            "First-Person Aiming: Switch to first-person view for precise shooting during tense encounters.",
+            "Noir Narrative: Uncover a dark conspiracy through cryptic documents, phone calls, and unreliable allies.",
+            "Limited Inventory: Manage your items carefully — every decision counts.",
+            "Moral Dilemmas: Choose between justice, survival, or personal redemption.",
+            "Atmospheric Sound Design: A haunting soundtrack and immersive audio pull you into the shadows of the city."
+        ],
+        technologies: ["Unreal Engine 5", "Blueprints", "Narrative Design", "Horror Design"],
+        link: "https://hollowsense.com/presskit/lockdown.html"
     }
 };
 
@@ -343,17 +362,20 @@ function closeProjectModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Event listeners para los proyectos
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', function() {
-        const projectName = this.querySelector('h3').textContent;
-        openProjectModal(projectName);
+// Inicializar event listeners cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    // Event listeners para los proyectos
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const projectName = this.querySelector('h3').textContent;
+            openProjectModal(projectName);
+        });
     });
-});
 
-// Event listeners para cerrar el modal
-document.getElementById('close-modal').addEventListener('click', closeProjectModal);
-document.getElementById('modal-close-btn').addEventListener('click', closeProjectModal);
+    // Event listeners para cerrar el modal
+    document.getElementById('close-modal').addEventListener('click', closeProjectModal);
+    document.getElementById('modal-close-btn').addEventListener('click', closeProjectModal);
+});
 
 // Cerrar modal al hacer clic fuera del contenido
 document.getElementById('project-modal').addEventListener('click', function(e) {
