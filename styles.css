@@ -336,6 +336,16 @@ body.light-theme span[class*="border-b-4"] {
     box-shadow: 0 10px 15px rgba(59, 130, 246, 0.3);
 }
 
+/* Zoom effect for project images */
+.project-image img {
+    transition: transform 0.7s ease;
+    transform: scale(1);
+}
+
+.project-image:hover img {
+    transform: scale(1.1);
+}
+
 .skill-bar {
     height: 8px;
     border-radius: 4px;
