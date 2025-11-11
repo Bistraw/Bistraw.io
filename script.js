@@ -106,25 +106,23 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // View More Projects functionality
-    const viewMoreBtn = document.getElementById('view-more-btn');
-    const moreProjects = document.querySelectorAll('.more-projects');
-    let showingAll = false;
+    // View More Videogames functionality
+    const viewMoreVideogamesBtn = document.getElementById('view-more-videogames-btn');
+    const moreVideogames = document.querySelectorAll('.more-videogames');
+    let showingAllVideogames = false;
 
-    if (viewMoreBtn) {
-        viewMoreBtn.addEventListener('click', function() {
-            moreProjects.forEach(project => {
+    if (viewMoreVideogamesBtn) {
+        viewMoreVideogamesBtn.addEventListener('click', function() {
+            moreVideogames.forEach(project => {
                 project.classList.toggle('hidden');
             });
 
-            showingAll = !showingAll;
+            showingAllVideogames = !showingAllVideogames;
             
-            if(showingAll) {
-                viewMoreBtn.innerHTML = 'Show Less';
-                viewMoreBtn.querySelector('svg').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>';
+            if(showingAllVideogames) {
+                viewMoreVideogamesBtn.innerHTML = 'Show Less <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>';
             } else {
-                viewMoreBtn.innerHTML = 'View All Projects';
-                viewMoreBtn.querySelector('svg').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>';
+                viewMoreVideogamesBtn.innerHTML = 'View All Projects <svg class="w-4 h-4 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>';
                 document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
             }
         });
@@ -141,7 +139,7 @@ const projectsData = {
             { type: "image", src: "imgs/woe1.jpg" },
           
         ],
-        description: "As a member of a small, collaborative team, I contribute directly to the development of the MMORPG 'World of Equilibrium'. My primary focus is on designing quests that immerse players in the storyline, creating typical MMO objectives that enhance the narrative surrounding the game's factions: The Kingdom and The Tribe. <br><br> Additionally, I design characters, developing their backstories and visual appearances while utilizing available resources to ensure each character fits seamlessly within the game's context. For level design, I create maps that are visually appealing and cohesive, paying close attention to element placement, lighting, and the harmony of assets. I avoid including anything that feels out of place unless it serves a clear narrative or environmental purpose. <br><br>We use Unreal Engine for development, and as a small team, we maintain constant communication to quickly address issues and keep the development process running smoothly, always working closely with the game director.",
+        description: "As a member of a small, collaborative team, I contribute directly to the development of the MMORPG 'World of Equilibrium'. My primary focus is on designing quests that immerse players in the storyline, creating typical MMO objectives that enhance the narrative surrounding the game's factions: The Kingdom and The Tribe. I have created over 200 quests for diverse game areas and modified +150 existing quests to improve gameplay experience. <br><br> Additionally, I design characters, developing their backstories and visual appearances while utilizing available resources to ensure each character fits seamlessly within the game's context. To date, I have designed 40 NPCs, including developing detailed backstories for 10 of them. For level design, I create maps that are visually appealing and cohesive, paying close attention to element placement, lighting, and the harmony of assets. I avoid including anything that feels out of place unless it serves a clear narrative or environmental purpose. <br><br>We use Unreal Engine for development, and as a small team, we maintain constant communication to quickly address issues and keep the development process running smoothly, always working closely with the game director.",
         features: [
             "Narrative development and immersive environment design.",
             "Consistent character and level creation aligned with game lore.",
@@ -196,12 +194,37 @@ const projectsData = {
             "Cinematic Fixed Cameras: A throwback to classic survival horror, with dramatic angles that build suspense and hide threats.",
             "First-Person Aiming: Switch to first-person view for precise shooting during tense encounters.",
             "Noir Narrative: Uncover a dark conspiracy through cryptic documents, phone calls, and unreliable allies.",
-            "Limited Inventory: Manage your items carefully — every decision counts.",
+            "Limited Inventory: Manage your items carefully \u2014 every decision counts.",
             "Moral Dilemmas: Choose between justice, survival, or personal redemption.",
             "Atmospheric Sound Design: A haunting soundtrack and immersive audio pull you into the shadows of the city."
         ],
         technologies: ["Unreal Engine 5", "Blueprints", "Narrative Design", "Horror Design"],
         link: "https://hollowsense.com/presskit/lockdown.html"
+    },
+    "Nų Yo": {
+        year: "2025",
+        media: [
+            { type: "image", src: "imgs/poster.jpg" }
+        ],
+        description: "Detailed description of Project Name 2. Replace this text with your actual project description.",
+        features: [
+            "Feature 1: Description of first feature",
+            "Feature 2: Description of second feature",
+            "Feature 3: Description of third feature",
+            "Feature 4: Description of fourth feature"
+        ],
+        technologies: ["Technology 1", "Technology 2", "Technology 3"],
+        link: "imgs/nuyo.pdf"
+    },
+    "Analysis of Stress Levels and Videogames": {
+        year: "2025",
+        media: [],
+        description: "Pending publication.",
+        features: [
+            "The general opinion suggests that immersive video games increase the stress levels of those who play them; however, this study proposes the opposite hypothesis: that the concentration required and the release of endorphins triggered by in-game rewards may actually reduce stress, functioning as a mechanism for managing cognitive resources.<br><br>For this study, the games S.W.A.T. 4 (action video game), Amnesia(horror video game), and Stardew Valley (relaxation video game) were used. Participants were evaluated using the psychometric instruments STAI (State-Trait Anxiety Inventory), PSS (Perceived Stress Scale), and ERQ (Emotional Regulation Questionnaire). The goal was to compare and analyze variations in stress and anxiety levels among participants before and after playing video games selected for their immersive capacity and genre, employing different metaheuristic techniques to identify complex patterns in psychometric data.<br><br>The results indicate that, in the STAI test, participants showed mild “state” anxiety levels, with an average score of 16 during their experience with the three games, compared to a moderate “trait” anxiety level (22 points), suggesting a reduction in anxiety during gameplay relative to their usual state. Similarly, the PSS results indicate moderate stress levels, with an average score of 18, while in the ERQ, participants obtained 5 points in the Cognitive Reappraisal category and 4 points in Expressive Suppression, both within the medium range. "
+        ],
+        technologies: ["Technology 1", "Technology 2", "Technology 3"],
+        link: "#"
     }
 };
 
@@ -250,9 +273,19 @@ function openProjectModal(projectName) {
         }
     }
     
-    // Renderizar el primer medio como principal
-    if (project.media && project.media.length > 0) {
-        renderMainMedia(project.media[0], 0);
+    // Renderizar el primer medio como principal (solo si no es Analysis of Stress)
+    if (projectName === "Analysis of Stress Levels and Videogames") {
+        // Ocultar completamente la sección de media
+        modalMainMedia.style.display = 'none';
+        modalGallery.style.display = 'none';
+    } else {
+        // Mostrar media normalmente
+        modalMainMedia.style.display = 'block';
+        modalGallery.style.display = 'grid';
+        
+        if (project.media && project.media.length > 0) {
+            renderMainMedia(project.media[0], 0);
+        }
     }
     
     // Limpiar y llenar la galería de miniaturas
@@ -325,17 +358,29 @@ function openProjectModal(projectName) {
     modalDescription.innerHTML = `<p>${project.description}</p>`;
     
     // Configurar características
+    // Cambiar el título y formato según el proyecto
+    const featuresTitle = document.querySelector('#modal-features h4');
     featuresList.innerHTML = '';
-    project.features.forEach(feature => {
-        featuresList.innerHTML += `
-            <li class="flex items-start">
-                <svg class="w-5 h-5 text-indigo-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>${feature}</span>
-            </li>
-        `;
-    });
+    
+    if (projectName === "Analysis of Stress Levels and Videogames") {
+        featuresTitle.textContent = 'Abstract';
+        // Mostrar el abstract como texto corrido sin bullet points
+        const abstractText = project.features.join(' ');
+        featuresList.innerHTML = `<p class="text-gray-300 leading-relaxed">${abstractText}</p>`;
+    } else {
+        featuresTitle.textContent = 'Key Features';
+        // Mostrar como lista con bullet points
+        project.features.forEach(feature => {
+            featuresList.innerHTML += `
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-indigo-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>${feature}</span>
+                </li>
+            `;
+        });
+    }
 
     // Configurar tecnologías
     techContainer.innerHTML = '';
@@ -344,11 +389,25 @@ function openProjectModal(projectName) {
     });
 
     // Configurar botón de visita
-    visitBtn.onclick = () => {
-        if (project.link && project.link !== '#') {
-            window.open(project.link, '_blank');
-        }
-    };
+    if (projectName === "Analysis of Stress Levels and Videogames") {
+        visitBtn.style.display = 'none';
+    } else if (projectName === "Nų Yo") {
+        visitBtn.style.display = 'inline-flex';
+        visitBtn.textContent = 'View Script (PDF)';
+        visitBtn.onclick = () => {
+            if (project.link && project.link !== '#') {
+                window.open(project.link, '_blank');
+            }
+        };
+    } else {
+        visitBtn.style.display = 'inline-flex';
+        visitBtn.textContent = 'Visit Project';
+        visitBtn.onclick = () => {
+            if (project.link && project.link !== '#') {
+                window.open(project.link, '_blank');
+            }
+        };
+    }
 
     // Mostrar el modal
     document.getElementById('project-modal').classList.remove('hidden');
